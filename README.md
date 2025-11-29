@@ -1,23 +1,73 @@
 # Crypto-Currency-Watcher
-A simple Python script to monitor the real-time price of any cryptocurrency pair on Binance.
 
-## Features
+Simple real-time monitoring of any cryptocurrency trading pair on Binance. Fetches the latest price every 10 seconds and prints it to the console.
 
-- Fetches the latest price every 10 seconds
-- Supports any Binance trading pair (e.g., ETHUSDT, BTCUSDT)
-- Easy to run locally or via Docker
+## Quick Start
 
-## Installation
+**With Docker (recommended):**
 
-Local 
-1. Install project from github
-2. Run main.py
-3. Enjoy!
+```bash
+git clone https://github.com/yuspax/Crypto-Currency-Watcher.git
 
-Docker
-1. Install project from github
-2. Build the Docker image: 
-    - docker build -t crypto-currency-watcher . 
-3. Run the container 
-    - docker run --rm crypto-currency-watcher 
-4. Enjoy!
+# Build image
+docker build -t crypto-currency-watcher .
+
+# Run
+docker run --rm crypto-currency-watcher
+```
+
+**Local (without Docker):**
+
+```bash
+git clone https://github.com/yuspax/Crypto-Currency-Watcher.git
+python main.py
+```
+
+## What It Does
+
+Fetches the real-time price of a selected Binance trading pair (e.g., **BTCUSDT**, **ETHUSDT**) every 10 seconds:
+
+```
+[2025-11-29 21:10:00] BTCUSDT: 68952.12
+[2025-11-29 21:10:10] BTCUSDT: 68948.90
+[2025-11-29 21:10:20] BTCUSDT: 68955.33
+```
+
+## Configuration
+
+Edit the trading pair in `main.py`:
+
+```python
+symbol = "BTCUSDT"
+```
+
+Then restart:
+
+```bash
+docker run --rm crypto-currency-watcher
+# or run main.py locally
+```
+
+## Useful Commands
+
+**Docker:**
+
+```bash
+docker build -t crypto-currency-watcher .   # Build
+docker run --rm crypto-currency-watcher     # Run
+```
+
+**Local:**
+
+```bash
+python main.py                              # Run locally
+```
+
+## Structure
+
+```
+Crypto-Currency-Watcher/
+├── main.py          # Main script
+├── Dockerfile       # Docker image
+└── requirements.txt # Dependencies 
+```
