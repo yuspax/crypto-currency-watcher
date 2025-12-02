@@ -63,11 +63,8 @@ docker run --rm crypto-currency-watcher     # Run
 python main.py                              # Run locally
 ```
 
-## Structure
+## CI/CD
+This project uses continuous integration and deployment (CI/CD).  
+- Every push to the repository triggers automated tests.  
+- Successful builds are automatically deployed.
 
-```
-Crypto-Currency-Watcher/
-├── main.py          # Main script
-├── Dockerfile       # Docker image
-└── requirements.txt # Dependencies 
-```
